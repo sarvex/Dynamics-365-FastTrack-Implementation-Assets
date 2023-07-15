@@ -26,7 +26,9 @@ def delivery_callback(err, msg):
     if err:
         sys.stderr.write('%% Message failed delivery: %s\n' % err)
     else:
-        print('Message delivered to {} {} @{} {} \n'.format(msg.topic(), msg.partition(), msg.offset(),msg.value()))
+        print(
+            f'Message delivered to {msg.topic()} {msg.partition()} @{msg.offset()} {msg.value()} \n'
+        )
 
 
 #  topic name which is the event hub name
